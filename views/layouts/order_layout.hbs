@@ -1,0 +1,67 @@
+<html>
+<title>{{title}}</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/css/w3.css">
+
+<style>
+    .featuredBtn.active {
+        background-color: khaki;
+        color: black;
+      }
+
+      .featuredBtn {
+
+      }
+</style>
+<body onLoad="changecolor();">
+
+    <!-- Sidebar -->
+    <div class="w3-sidebar w3-light-grey w3-bar-block" style="width: 15%">
+        <h3 class="w3-bar-item">Menu</h3>
+        <p>Order</p>
+        <button onclick="window.location.href='/restaurant/new_order'" type="button" class="w3-bar-item w3-button featuredBtn active" id="btnOne">New Order</button>
+        <button onclick="window.location.href='/restaurant/processing_order'" type="button" class="w3-bar-item w3-button featuredBtn" id="btnTwo">In Progress</button>
+        <button onclick="window.location.href='/restaurant/finished_order'" type="button" class="w3-bar-item w3-button featuredBtn" id="btnThree">Ready</button>
+        <p>Adjust Menu</p>
+        <a href="/restaurant/menu_bubble_tea" class="w3-bar-item w3-button">Bubble Teas</a>
+        <a href="/restaurant/menu_fruit_tea" class="w3-bar-item w3-button">Fruit Teas</a>
+        <a href="/restaurant/menu_fresh_juice" class="w3-bar-item w3-button">Fresh Juices</a>
+        <a href="/restaurant/menu_cakes" class="w3-bar-item w3-button">Cakes</a>
+        <a href="/restaurant/menu_snacks" class="w3-bar-item w3-button">Snacks</a>
+        <p>Profile</p>
+        <a href="/restaurant/reset_password" class="w3-bar-item w3-button">Reset password</a>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script>
+            function changecolor(){
+                var url = window.location.href;
+                if(url.includes("new_order")){
+                    $("#btnOne").addClass("active");
+                    $("#btnTwo").removeClass("active");
+                    $("#btnThree").removeClass("active");
+                }
+                else if(url.includes("processing_order")){
+                    $("#btnTwo").addClass("active");
+                    $("#btnOne").removeClass("active");
+                    $("#btnThree").removeClass("active");
+                }
+                else if(url.includes("finished_order")){
+                    $("#btnThree").addClass("active");
+                    $("#btnOne").removeClass("active");
+                    $("#btnTwo").removeClass("active");
+                }
+            }
+
+        </script>
+    </div>
+
+    <!-- Page Content -->
+    <div style="margin-left:15%; height:100%; overflow: auto">
+
+        <div class="w3-container" style="display:flex; flex-direction: row; height:100%; padding:0">
+            {{{body}}}
+        </div>
+
+    </div>
+</body>
+
+</html>

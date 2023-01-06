@@ -1,0 +1,35 @@
+<div class="w3-row w3-padding-64" id="rlogin" style="width:100%; height:100%;">
+    <div class="w3-padding-32" style="width:100%; height:100%; display:flex; justify-content:center">
+        <div class="w3-col m5 l5 w3-left w3-animate-left w3-white" style="height: 100%; min-height:455px; display:flex; justify-content:center">
+            <img src="/images/Screen Shot 2022-09-18 at 16.51.22.png" class="w3-round w3-opacity-min"
+                alt="LOGO" style="height: 100%; width: auto">
+        </div>
+        <div class="w3-col m5 l5 w3-padding-64 w3-right w3-animate-right"
+            style="background-color: #BFD962; height: 100%; min-height:455px">
+            <h1 class="w3-center">Manager Login</h1>
+            {{#each flash}}
+            <span>
+                <h3 class="w3-center w3-text-red">{{this}}</h3>
+            </span>
+            {{/each}}
+            <form action="/teamakerLogin" method="POST">
+                <div class="w3-row m3 w3-padding-large w3-center">
+                    <label for="username">
+                        <h3>Email</h3>
+                    </label>
+                    <input class="w3-input" type="text" name="username" placeholder="Enter your email address" />
+                </div>
+                <div class="w3-row m3 w3-padding-large w3-center">
+                    <label for="password">
+                        <h3>Password</h3>
+                    </label>
+                    <input class="w3-input" type="password" name="password" placeholder="Enter your password"
+                        id="id_password" />
+                </div>
+                <div class="w3-row m3 w3-padding-large w3-center">
+                    <button class="w3-btn w3-grey">Log In</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

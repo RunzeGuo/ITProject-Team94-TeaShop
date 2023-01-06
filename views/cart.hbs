@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/css/customer.css">
+    <script src="https://kit.fontawesome.com/ca963f54bb.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <div class="currentNhistory">
+        <h2 style="background-color:#BFD962;" onclick="window.location.href='/customer/cart'" style="cursor: pointer;">Cart</h2>
+        <h2 onclick="window.location.href='/customer/orders'" style="cursor: pointer;">Orders</h2>
+    </div>
+
+    <div class="preorder">
+        <form  action="/customer/cart" method = "POST">
+            {{#each data}}
+            <div class="orderdetails">
+                <img src="{{this.pic_link}}" alt="Caramel">
+                <div>
+                    <h3>{{this.name}}
+                    </h3>
+                    <h4>{{this.Ice}} ice, {{this.Sugar}} sugar</h4>
+                    <span>
+                        <input type = "hidden" name = "name" value = "{{this.name}}" />
+                        <input type = "hidden" name = "Ice" value = "{{this.Ice}}" />
+                        <input type = "hidden" name = "Sugar" value = "{{this.Sugar}}" />
+                        <input type = "hidden" name = "pic_link" value = "{{this.pic_link}}" />
+                        <input type = "hidden" name = "price" value = "{{this.price}}" />
+                        <ul class="count">
+                            <span class="num-sub">➖</span>
+                            <input type="number" class="input-num" name = "amount" value="{{this.amount}}">
+                            <span class="num-add">➕</span>
+                        </ul>
+                        
+                        <ul class="unitPrice">
+                            <span>$</span>
+                            <input type="number" class="price" name = "price" value="{{this.prices}}" style="border: none; font-size: 2vh">
+                        </ul>                  
+                    </span>
+                </div>
+            </div>
+            {{/each}}
+            <span class="total">
+                <h3>In total</h3>
+                <!--<h3 id="totalPrice">{{total}}</h3>-->
+                <input style = "width: 12%; border-color: white; border-width: 0px; font-size: larger; " type="number" id="totalPrice" name="totalprice" value="{{total}}">
+            </span>
+        
+        
+            <button class="checkout">Checkout</button>
+        
+        </form>
+        <script>
+            var incrementButton = document.getElementsByClassName('num-add');
+            var decrementButton = document.getElementsByClassName('num-sub');
+            var totalPrice = document.getElementById('totalPrice');
+
+            for(var i = 0; i < incrementButton.length; i++){
+                var button = incrementButton[i];
+
+                button.addEventListener('click',function(event){
+
+                    var buttonClicked = event.target;
+
+                    var input = buttonClicked.parentElement.children[1];
+                    var price = (((buttonClicked.parentElement).parentElement).children[6]).children[1];
+
+                    var inputValue = input.value;
+                    var priceValue = price.value;
+                    var totalPriceValue = totalPrice.value;
+
+                    var newInputValue = parseInt(inputValue) + 1;
+                    input.value = newInputValue;
+
+                    var newTotalValue = parseFloat(totalPriceValue) + parseFloat(priceValue);
+                    totalPrice.value = newTotalValue;
+
+                })
+            }
+
+            for(var i = 0; i < decrementButton.length; i++){
+                console.log(i)
+                var button = decrementButton[i];
+                
+                button.addEventListener('click',function(event){
+                    
+                    var buttonClicked = event.target;
+
+                    var input = buttonClicked.parentElement.children[1];
+                    var price = (((buttonClicked.parentElement).parentElement).children[6]).children[1];
+
+                    var inputValue = input.value;
+                    var priceValue = price.value;
+                    var totalPriceValue = totalPrice.value;
+
+
+                   
+                    var newValue = parseInt(inputValue) - 1;
+                    input.value = newValue;
+
+                    var newTotalValue = parseFloat(totalPriceValue) - parseFloat(priceValue);
+                    totalPrice.value = newTotalValue;
+
+                    if(newValue == 0){
+                        (((buttonClicked.parentElement).parentElement).parentElement).parentElement.style.display='none';
+                                  
+                    }
+                        
+                   
+                        
+                  
+                })
+
+              
+            }
+        </script>
+    </div>
+    
+ 
+    <div class = "nav">
+        <div class="floating">{{totalamount}}</div>
+        <button onclick="window.location.href='/customer/home'" style="cursor: pointer;">
+            <i class="fa-solid fa-house fa-2xl"></i>
+            <h3>Home</h3>
+        </button>
+        <button onclick="window.location.href='/customer/cart'" style="cursor: pointer;">
+            <i class="fa-solid fa-bag-shopping fa-2xl"></i>
+            <h3>Order</h3>
+        </button>
+        <button onclick="window.location.href='/customer/profile'" style="cursor: pointer;">
+            <i class="fa-solid fa-user fa-2xl"></i>
+            <h3>Profile</h3>
+        </button>
+    </div>
+    
+</body>
+</html>

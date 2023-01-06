@@ -1,0 +1,37 @@
+<div class="w3-container" style="display:flex; flex-direction: row; height:100%; width:100%; ">
+{{#each new_order}}
+<div class="w3-card-4 w3-lime w3-padding-large" style="width: 500px;margin: 20px; height:fit-content">
+    <h2>Order details: </h2>
+    <div class="w3-right-align">
+        {{#each items_and_number}}
+        <h2>{{this.name}}</h2>
+        <h2>{{this.Ice}} Ice</h2>
+        <h2 class="w3-bottombar w3-border-black" style="margin-bottom:0">{{this.Sugar}} Sugar</h2>
+        {{/each}}
+    </div>
+
+    <div class="w3-bar w3-bottombar w3-border-brown w3-padding-large" style="display: flex; flex_direction: row">
+        <div class="w3-container w3-padding-small">
+            <form action="/restaurant/finished_order/pick/{{this.id}}" method="post">
+                <button type="submit" class="w3-button w3-large w3-teal">Picked</button>
+            </form>
+        </div>
+    </div>
+
+    <h3>Customer Information:</h3>
+    <h4>Customer Name: </h4>
+    <div class="w3-right-align">
+        <h4>{{this.customer_name}}</h4>
+    </div>
+    <h4>Customer Mobile: </h4>
+    <div class="w3-right-align">
+        <h4>{{this.customer_mobile}}</h4>
+    </div>
+    <h4>Customer Email: </h4>
+    <div class="w3-right-align">
+        <h4>{{this.customer_email}}</h4>
+    </div>
+    <dic class="w3-border-top"></dic>
+</div>
+{{/each}}
+</div>

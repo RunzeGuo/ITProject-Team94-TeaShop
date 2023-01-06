@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AccountDetails</title>
+    <link rel="stylesheet" href="/css/accountDetails.css">
+    <style type="text/css">
+
+        .accountDetails{
+            display: flex;
+            height: 80vh;
+            flex-direction: column;
+            justify-content: start;
+        }
+
+        form{
+            margin-top: 5%;
+            height: 30%;
+            text-align: center;
+        }
+
+
+        form input{
+            height: 30%;
+            width: 80%;
+            border-radius: 14px;
+            text-align: center;
+           
+        }
+
+        button{
+            width: 50%;
+            height: 25%;
+            font-size: large;
+            font-weight: bold;
+            border-radius: 14px;
+            background-color: #BFD962;
+            margin-top: 10%;
+            
+        }
+
+        div{
+            display: flex;
+            flex-direction: column;
+            height: 10%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="accountDetails">
+        <div style="height: 5%"><h1>Account Details</h1></div>
+        <form action="/customerregister" method="POST">
+            <label for="first_name"><h3>First Name</h3></label>
+            <input style =" height: 20%;" type="text" name="first_name" placeholder="" />
+            <label for="last_name"><h3>Last Name</h3></label>
+            <input style =" height: 20%;" type="text" name="last_name" placeholder="" />
+            <label for="nickname"><h3>Nick Name</h3></label>
+            <input style =" height: 20%;" type="text" name="nickname" placeholder="" />
+            <label for="mobile"><h3>Mobile Number</h3></label>
+            <input style =" height: 20%;" type="text" name="mobile" placeholder="" />
+            <label for="username"><h3>Email</h3></label>
+            <input style =" height: 20%;" type="text" name="username" placeholder="" />
+            <button >Update</button>
+        </form>
+        
+    </div>
+
+    <button style="margin-left: 25%; height: 6vh;">Back</button>
+    
+    
+</body>
+</html>

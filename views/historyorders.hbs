@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/css/customer.css">
+    <script src="https://kit.fontawesome.com/ca963f54bb.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="currentNhistory">
+        <h2 onclick="window.location.href='/customer/cart'" style="cursor: pointer;">Current order</h2>
+        <h2 style="background-color:#BFD962;" onclick="window.location.href='/customer/historyorder'" style="cursor: pointer;">History order</h2>
+    </div>
+    <div class="historyorders">
+        {{#each data}}
+        <div class="historyorder">
+            <img src="{{this.pic_link}}" alt="caramel">
+            <div class="history">
+                <h3>#1166273 ${{this.total_price}}</h3>
+                <h6>{{this.time_order_picked_string}}</h6>
+                <button class="view">view details</button>
+            </div>
+            <button>Reorder</button>
+            
+            <div class="overlay">
+                {{#each items_and_number}}
+                <h4>{{this.name}}</h4>
+                <h4>Ice {{this.Ice}}</h4>
+                <h4 style="width: 30%;">Sugar {{this.Sugar}}</h4>
+                <h4 style="width:10%"> ${{this.prices}}</h4>
+                {{/each}}
+            </div>
+            
+        </div>
+        <script>
+        const VIEW = document.querySelector(".view")
+        const NOVIEW = document.querySelector(".overlay")
+
+        VIEW.addEventListener("click", ()=>{
+            NOVIEW.classList.toggle("overlay-apear")
+        })
+
+        NOVIEW.addEventListener("click", ()=>{
+            NOVIEW.classList.toggle("overlay-apear")
+        })
+        </script>
+        {{/each}}
+    </div>
+    
+    
+    
+    <div class = "nav">
+        <div class="floating">{{amount}}</div>
+        <button onclick="window.location.href='/customer/home'" style="cursor: pointer;">
+            <i class="fa-solid fa-house fa-2xl"></i>
+            <h3>Home</h3>
+        </button>
+        <button onclick="window.location.href='/customer/cart'" style="cursor: pointer;">
+            <i class="fa-solid fa-bag-shopping fa-2xl"></i>
+            <h3>Order</h3>
+        </button>
+        <button onclick="window.location.href='/customer/profile'" style="cursor: pointer;">
+            <i class="fa-solid fa-user fa-2xl"></i>
+            <h3>Profile</h3>
+        </button>
+    </div>
+</body>
+</html>

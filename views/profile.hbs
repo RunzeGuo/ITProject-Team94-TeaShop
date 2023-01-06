@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/css/customer.css">
+    <script src="https://kit.fontawesome.com/ca963f54bb.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="profile">
+        <h2>My Account</h2>
+        <div >
+            <h3>Account Details</h3>
+            <h2>></h2>
+        </div>
+        <div onclick="window.location.href='/customer/profile/resetpassword'" style="cursor: pointer;">
+            <h3>Change Password</h3>
+            <h2>></h2>
+        </div>
+        <div>
+            <h3>Favourite</h3>
+            <h2>></h2>
+        </div>
+        <div>
+            <h3>Payments</h3>
+            <h2>></h2>
+        </div>
+        <h3 style="color:green;" onclick="window.location.href='/customer/profile/deleteAccount'">Delete Account</h3>
+
+        <button class="signout" onclick="window.location.href='/customerLogin'" style="cursor: pointer;">
+            <h2>Sign out</h3>
+        </button>
+
+    </div>
+
+    <div class = "nav">
+        <div class="floating">{{amount}}</div>
+        <button onclick="window.location.href='/customer/home'" style="cursor: pointer;">
+            <i class="fa-solid fa-house fa-2xl"></i>
+            <h3>Home</h3>
+        </button>
+        <button onclick="window.location.href='/customer/cart'" style="cursor: pointer;">
+            <i class="fa-solid fa-bag-shopping fa-2xl"></i>
+            <h3>Order</h3>
+        </button>
+        <button onclick="window.location.href='/customer/profile'" style="cursor: pointer;">
+            <i class="fa-solid fa-user fa-2xl"></i>
+            <h3>Profile</h3>
+        </button>
+        
+    </div>
+</body>
+</html>

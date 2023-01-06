@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error 404</title>
+    <link rel="stylesheet" type="text/css" href="/css/customer.css">
+    <script src="https://kit.fontawesome.com/ca963f54bb.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <div class="upper">
+        <div>
+            <h1>NAME</h1>
+        </div>
+        <div>
+            <form action="">
+                <input type="text" placeholder="Classic">
+            </form>
+        </div>
+    </div>
+    
+    <div class = "bars">
+        <div onclick="window.location.href='/customer/bubbletea'" style="cursor: pointer;">
+            <h2>Bubble Tea</h2>
+            <img src="/images/bubbletea.png" alt="bubbletea">
+        </div>
+        <div>
+            <h2>Fruit Tea</h2>
+            <img src="/images/fruit tea.png" alt="fruit tea">
+        </div>
+        <div>
+            <h2>Fresh Juice</h2>
+            <img src="/images/freshfruit.png" alt="fresh juice">
+        </div>
+        <div>
+            <h2>Cake & Dessert</h2>
+            <img src="/images/cake.png" alt="cake">
+        </div>
+        <div>
+            <h2>Snacks</h2>
+            <img src="/images/snacks.png" alt="snacks">
+        </div>
+    </div>
+
+    <div class = "nav">
+        <div class="floating">{{amount}}</div>
+        <button onclick="window.location.href='/customer/home'" style="cursor: pointer;">
+            <i class="fa-solid fa-house fa-2xl"></i>
+            <h3>Home</h3>
+        </button>
+        <button onclick="window.location.href='/customer/cart'" style="cursor: pointer;">
+            <i class="fa-solid fa-bag-shopping fa-2xl"></i>
+            <h3>Order</h3>
+        </button>
+        <button onclick="window.location.href='/customer/profile'" style="cursor: pointer;">
+            <i class="fa-solid fa-user fa-2xl"></i>
+            <h3>Profile</h3>
+        </button>
+        
+    </div>
+    
+
+
+</body>
+
+</html>

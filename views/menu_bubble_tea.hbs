@@ -1,0 +1,87 @@
+<!-- Add new item button for all categories -->
+<div class="w3-bar w3-padding-large" style="margin-left:15%; overflow: auto">
+    <button onclick="document.getElementById('new').style.display='block'"
+        class="w3-bar-item w3-button w3-lime w3-round-xlarge w3-padding-large">Add New Item</button>
+    <div id="new" class="w3-modal">
+        <form class="w3-modal-content w3-card-4" action="/restaurant/menu_bubble_tea_new_item" method="post"
+            enctype="multipart/form-data">
+            <header class="w3-container w3-teal">
+                <span onclick="document.getElementById('new').style.display='none'"
+                    class="w3-button w3-display-topright">&times;</span>
+                <h2>Add New Item</h2>
+            </header>
+            <div style="width:100%; height:fit-content; display:flex; justify-content:center">
+                <div class="w3-col w3-left w3-animate-left w3-white"
+                    style="width: 50%; height: 100%; min-height:455px; justify-content:center">
+                    <header class="w3-container">
+                        <h3>Upload your File :</h3>
+                    </header>
+                    <div class="w3-container">
+                        <div class="w3-container w3-padding-16">Browse the file</div>
+                        <input type="file" name="file" required />
+                        <div class="w3-container w3-text-grey w3-padding-16">Supports: JPEG, JPG, PNG</div>
+                    </div>
+                </div>
+                <div class="w3-col w3-padding-64 w3-right w3-animate-right"
+                    style="background-color: #BFD962; width: 50%; height: 100%; min-height:455px; margin: 0;">
+                    <div class="w3-panel" style="padding-top: 5px;">
+                        <div class="w3-left w3-padding">Name: </div>
+                        <div class="w3-right w3-padding"><input class="w3-input w3-animate-input" type="text"
+                                name="name" required style="width:135px"><br></div>
+                    </div>
+                    <div class="w3-panel" style="padding-top: 5px;">
+                        <div class="w3-left w3-padding">Price: </div>
+                        <div class="w3-right w3-padding"><input class="w3-input w3-animate-input" type="number"
+                                step="0.01" required name="prices" style="width:135px"><br></div>
+                    </div>
+                </div>
+            </div>
+            <footer class="w3-bar w3-bottombar w3-padding-large w3-khaki" style="display: flex;">
+                <div class="w3-container w3-padding-small">
+                    <button type="submit" class="w3-button w3-large w3-teal">Add</button>
+                </div>
+                <div class="w3-container w3-padding-small">
+                    <button onclick="document.getElementById('new').style.display='none'"
+                        class="w3-button w3-large w3-teal">Cancel</button>
+                </div>
+            </footer>
+        </form>
+    </div>
+</div>
+
+<!-- Page Content -->
+<div style="margin-left:15%; height:100%; overflow: auto">
+    <div class="w3-container"
+        style="display:flex; flex-direction: row; height:100%; width:100%; padding:5%; overflow: auto">
+        {{#each current_menu}}
+        <div class="w3-card-4 w3-round-xlarge w3-display-container zoom w3-animate-right"
+            style="width: 25%;margin: 20px; height:40%">
+            <img src="{{this.pic_link}}" alt="{{this.name}}">
+            <p class="w3-display-bottomleft w3-container w3-text-black w3-large bold">{{this.name}}</p>
+            <form class="w3-modal-content w3-card-4" style="width:100%; height:fit-content;"
+                action="/restaurant/menu_bubble_tea_item/update/{{this.id}}" method="post">
+                <div class="w3-col w3-padding-16"
+                    style="background-color: #BFD962; width: 100%; height: fit-content; margin: 0;">
+                    <div class="w3-container" style="padding-top: 5px; display:flex;">
+                        <div class="w3-padding">Name: </div>
+                        <div class="w3-padding"><input class="w3-input " type="text" value="{{this.name}}" name="name"
+                                style="width:100%"><br></div>
+                    </div>
+                    <div class="w3-container" style="padding-top: 5px; display:flex;">
+                        <div class="w3-left w3-padding">Price: </div>
+                        <div class="w3-right w3-padding"><input class="w3-input" type="number" step="0.01"
+                                value="{{this.prices}}" required name="prices" style="width:100%"><br></div>
+                    </div>
+                </div>
+                <div class="w3-container w3-padding-small" style="background-color: #BFD962; bottom:0;">
+                    <button type="submit" required class="w3-button w3-large w3-teal">Update</button>
+            </form>
+            <form action="/restaurant/menu_bubble_tea_item/delect/{{this.id}}" method="post">
+                <button type="submit" class="w3-button w3-large w3-red">Delete</button>
+            </form>
+        </div>
+
+    </div>
+    {{/each}}
+</div>
+</div>

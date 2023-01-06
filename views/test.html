@@ -1,0 +1,43 @@
+<html>
+<title>title</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<body>
+
+    <!-- Sidebar -->
+    <div class="w3-sidebar w3-light-grey w3-bar-block" style="width: 15%">
+        <h1 class="w3-bar-item">Menu</h1>
+        <h2><a href="#" class="w3-bar-item w3-button">New Order</a></h2>
+        <h2><a href="#" class="w3-bar-item w3-button">In Progress</a></h2>
+        <h2><a href="#" class="w3-bar-item w3-button">Ready</a></h2>
+    </div>
+
+    <!-- Page Content -->
+    <div style="margin-left: 15%; display: flex; flex-direction: row;">
+
+
+        <div class="w3-container">
+            <div class="w3-card w3-lime " style="width: 500px;margin: 20px; padding: 30px;">
+                <h2>Customer Information:</h2>
+                <h3>Customer Name: </h3>
+                <h3>Customer Mobile: </h3>
+                <h3>Customer Email: </h3>
+                <h2>Order details: </h2>
+
+                <div class="w3-bar">
+                    <form action="/restaurant/new_order/accept/" method="post">
+                        <button type="submit" class="w3-button w3-teal">Accept</button>
+                    </form>
+                    <form action="/restaurant/new_order/reject/" method="post">
+                        <button type="submit" class="w3-button w3-teal">Reject</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

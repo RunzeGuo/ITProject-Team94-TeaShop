@@ -1,0 +1,18 @@
+
+<body>
+    <img src="/images/Screen Shot 2022-09-18 at 16.51.22.png" alt="LOGO">
+    <div><h1>Customer Login</h1></div>
+    {{#each flash}}
+        <span><h3>{{this}}</h3></span>
+    {{/each}}
+    <form action="/customerLogin" method="POST">
+        <label for="username"><h3>Email</h3></label>
+        <input type="text" name="username" placeholder="Enter your email address" />
+        <label for="password"><h3>Password</h3></label>
+        <input type="password" name="password" placeholder="Enter your password" id="id_password"/>
+        
+        <button>Log In</button>
+            
+    </form>
+    <button style="height: 8%; align-self: center; margin-top: 15%" onclick="window.location.href='/customerregister'" style="cursor: pointer;">Register</button>
+</body>

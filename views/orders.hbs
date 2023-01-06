@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/ca963f54bb.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="/css/customer.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="currentNhistory">
+        <h2 onclick="window.location.href='/customer/cart'" style="cursor: pointer;">Cart</h2>
+        <h2 style="background-color:#BFD962;" onclick="window.location.href='/customer/orders'" style="cursor: pointer;">Orders</h2>
+    </div>
+
+    <div class="preorder">
+        {{#each current}}
+        <div class="pendingOrder">
+            <h2 style="width: 80%; height: 5%; margin-left: 2%;">Order number# {{this.order_number}}</h2>
+            {{#each items_and_number}}
+            <div class="orderdetails" style="border-top: solid 1px; width: 95%; margin-left:2.5%">
+                <img src="{{this.pic_link}}" alt="Caramel">
+                <div>
+                    <h3>{{this.name}}x{{this.amount}}</h3>
+                    <h4>{{this.Ice}}ice, {{this.Sugar}}sugar</h4>
+                    <h3>${{this.price}}</h3>          
+                </div>
+            </div>
+            {{/each}}
+
+            {{#if this.is_finished}}
+                <div class = "track">
+                    <img  src="/images/pickupready.png" alt="making">        
+                </div>
+            {{else}}
+                {{#if this.is_accepted}}
+                <div class = "track">
+                <img  src="/images/making.png" alt="making">        
+                </div>
+                {{else}}
+                <div class = "track">
+                    <img  src="/images/wait.png" alt="making">        
+                </div>
+                {{/if}}
+            {{/if}}
+        </div>
+        {{/each}}
+        {{#each history}}
+        <div class="finishedOrder">
+            <div class="orderdetails" style="border-top: solid 1px; width: 95%; margin-left:2.5%; background-color:#BFD962">
+                <img src="/images/caramal.png" alt="Caramel">
+                <div>
+                    <h3>#{{this.order_number}}</h3>
+                    <h4>{{this.time_order_picked_string}}</h4>
+                    <h4>Total {{this.total_price}}</h4>                   
+                </div>                
+            </div>
+            <button class="vdButton">view details</button>
+            <div class="showDetails">
+                {{#each items_and_number}}
+                <div class="orderdetails" style="border-top: solid 1px; width: 95%; margin-left:2.5%;">
+                    <img src="{{this.pic_link}}" alt="Caramel">
+                    <div>
+                        <h3>{{this.name}}x{{this.amount}}</h3>
+                        <h4>{{this.Ice}}ice, {{this.Sugar}}sugar</h4>
+                        <h3>${{this.price}}</h3>
+                       
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+
+                  
+        </div>
+        {{/each}}
+                                 
+    </div> 
+
+    <script>
+        var aList = document.querySelectorAll('.vdButton');
+        var aHide = document.querySelectorAll(".showDetails");
+        for (var i = 0; i < aList.length; i++)
+        {
+            aList[i].index = i; 
+            aList[i] = false;
+            aHide[i].style.display = "none";
+            aList[i].onclick = function () {
+
+                if (!this.isCilck) {
+                    aHide[this.index].style.display = "block";
+                    this.isCilck = true; 
+                } else {
+                    
+                    aHide[this.index].style.display = "none";
+                    this.isCilck = false;
+                }
+            }
+        }
+    </script>
+
+    <div class = "nav">
+        <button onclick="window.location.href='/customer/home'" style="cursor: pointer;">
+            <i class="fa-solid fa-house fa-2xl"></i>
+            <h3>Home</h3>
+        </button>
+        <button onclick="window.location.href='/customer/cart'" style="cursor: pointer;">
+            <i class="fa-solid fa-bag-shopping fa-2xl"></i>
+            <h3>Order</h3>
+        </button>
+        <button onclick="window.location.href='/customer/profile'" style="cursor: pointer;">
+            <i class="fa-solid fa-user fa-2xl"></i>
+            <h3>Profile</h3>
+        </button>
+    </div>
+    
+</body>
+</html>

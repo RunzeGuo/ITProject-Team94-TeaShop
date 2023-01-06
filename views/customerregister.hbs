@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/css/login.css">
+</head>
+<body>
+    <div style="height: 5%"><h1>Customer Register</h1></div>
+    <form action="/customerregister" method="POST">
+        <label for="first_name"><h3>First Name</h3></label>
+        <input style =" height: 20%;" type="text" name="first_name" placeholder="" />
+        <label for="last_name"><h3>Last Name</h3></label>
+        <input style =" height: 20%;" type="text" name="last_name" placeholder="" />
+        <label for="nickname"><h3>Nick Name</h3></label>
+        <input style =" height: 20%;" type="text" name="nickname" placeholder="" />
+        <label for="mobile"><h3>Mobile Number</h3></label>
+        <input style =" height: 20%;" type="text" name="mobile" placeholder="" />
+        <label for="username"><h3>Email</h3></label>
+        <input style =" height: 20%;" type="text" name="username" placeholder="" />
+        <label for="password"><h3>Password</h3></label>
+        <input style =" height: 20%;" type="text" name="password" placeholder="" />
+        <button >Register</button>
+    </form>
+
+    <button style="margin-top:100%; margin-left: 25%; height: 7vh;" onclick="window.location.href='/customerLogin'">Back</button>
+</body>
+
+
+</html>

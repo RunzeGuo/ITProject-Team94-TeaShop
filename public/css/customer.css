@@ -1,0 +1,607 @@
+* {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: 'open-sans', sans-serif;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: space-between;
+    
+}
+
+.upper{
+    height: 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    position: fixed;
+    top:0;
+}
+
+.upper div{
+    height: 30%;
+}
+
+.upper div h1{
+    margin-left: 10%;
+    height: 100%;
+}
+.upper form{
+    text-align: center;
+}
+.upper input{
+    border-radius: 14px;
+    width: 80%;
+    height: 120%;
+    text-align: center;
+    font-size: medium;
+    font-weight: bold;
+    background-color: rgb(226, 220, 220);
+}
+
+.bars{
+    position: relative;
+    top: 25%;
+    height: 60%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+}
+
+.bars div{
+    display: flex;
+    flex-direction: row;
+    height: 15%;
+    width: 90%;
+    border-radius: 25px;
+    border:solid 2px;
+    background-color: #BFD962;
+}
+.bars div h2{
+    margin-top: 6%;
+    height: 50%;
+    color:white;
+    margin-left: 10%;
+}
+.bars img{
+    height: 80%;
+    width: 25%;
+    margin-right: 5%;
+    margin-top: 2%;
+}
+.nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 8%;
+    border-bottom:solid 2px;
+    border-top:solid 2px;
+    bottom: 0;
+    position: fixed;
+}
+.nav button{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border: none;
+    padding-top: 1vh;
+
+}
+
+.nav button i{
+    margin: 1vh;
+}
+
+.nav button h3{
+    margin: 1vh;
+}
+
+.nav img{
+    margin-top: 3%;
+    width: 14%;
+    height: 70%;
+}
+
+.floating{
+    position: absolute;
+    background-color: red;
+    z-index: 20;
+    width: 3vh;
+    height: 3vh;
+    position: absolute;
+    text-align: center;
+    border-radius: 50px;
+}
+.floating2{
+    position:absolute;
+    background-color: red;
+    z-index: 20;
+    width: 3vh;
+    height: 3vh;
+    text-align: center;
+    border-radius: 50px;
+    float: right;
+    margin-left: 16%;
+}
+/*menu page*/
+.uppernav{
+    top:0;
+    position: fixed;
+    height: 10%;
+    margin-top: 1px;
+    border-bottom:solid 2px;
+    border-top:solid 2px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    z-index: 1;
+}
+
+.uppernav button{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border: none;
+    padding-top: 1vh;
+}
+
+.uppernav button i{
+    margin-top: 2vh;
+}
+
+
+.customerMenuContent{
+    top: 10%;
+    position: relative;
+    z-index: 0;
+}
+
+.ads{
+    height: 20%;
+}
+.allitems{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 50%;
+}
+.item{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 18%;
+    border: solid 1px;
+    border-radius: 14px;
+    border-color: gray;
+}
+.item img{
+    height: 100%;
+    width: 70%;
+    border-radius: 13px;
+}
+.item h3{
+    height: 50%;
+    text-align: center;
+    width: 70%;
+    margin-top: 5%;
+    margin-left: 2%;
+}
+.item button{
+    width: 50%;
+    height: 50%;
+    margin-top: 5%;
+    margin-right: 2%;
+    background-color: #BFD962;
+    border-color: black;
+    border-radius: 10px;
+    border-width: 1px;
+    display: block;
+}
+.item button h3{
+    margin-left: 15%;
+}
+
+/*customize page*/
+.customize{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+    background-color: #BFD962;
+}
+.customizemenu{
+    height: 5%;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 10%;
+    margin-top: 8%;
+}
+.customizemenu img{
+    width: 10%;
+    height: 80%;
+}
+.customizeitem{
+    height: 30%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 10%;
+}
+.customizeitem img{
+    height: 80%;
+    width: 55%;
+    margin-right: 2%;
+}
+.customizeitem h1{
+    height: 50%;
+    width: 80%;
+    margin-top: 20%;
+    margin-left: 2%;
+    color: white;
+}
+.customizedetails{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 55%;
+    background-color: white;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+.customizedetails h3{
+    width: 10%;
+    height: 5%;
+    margin-left: 3%;
+}
+
+.customizedetails form{
+    height: 60%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    justify-content: space-between;
+}
+.customizedetails form div{
+    display: flex;
+    flex-direction: row;
+    height: 30%;
+}
+.customizedetails form h2{
+    
+    height:25%
+}
+.customizedetails form label{
+    height: 10%;
+}
+.customizedetails form input{
+    height: 60%;
+    width: 80%;
+    background-color: #BFD962;
+    border-radius: 15px;
+    border-width: 1px;
+    text-align: center;
+}
+.customizedetails form button{
+    height: 20%;
+    background-color: #BFD962;
+    border-radius: 40px;
+    text-align: center;
+    border-width: 2px;
+}
+.customizedetails form button h1{
+    margin-top: 3%;
+    color: white;
+    
+}
+/*cart page*/
+.currentNhistory{
+    height: 8%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    top: 0;
+    position: fixed;
+    z-index: 1;
+}
+.currentNhistory h2{
+    text-align: center;
+    height: 100%;
+    border: solid 1px;
+    padding-top: 4%;
+}
+.preorder{
+    top: 10%;
+    bottom: 10%;
+    position: relative;
+    z-index: 0;
+    height: 80%;
+    overflow-y: auto;
+}
+
+
+.orderdetails{
+    height: auto; 
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 5%;
+    padding-top: 5%;
+}
+
+.orderdetails img{
+    height: 50%;
+    width: 40%;
+}
+
+
+.orderdetails div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    width: 60%;
+
+}
+.orderdetails div h3{
+    height: 20%;
+    width: 30%;
+}
+.orderdetails div h4{
+    height: 20%;
+    width: 100%;
+    margin-top: 10%;
+}
+.orderdetails span{
+    height: 30%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+   
+}
+
+.orderdetails span ul{
+    width: 30%;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    margin-top: 15%;
+}
+
+
+
+
+.pendingOrder{
+    height: fit-content;
+}
+
+
+.finishedOrder{
+    height: fit-content;
+
+}
+
+.finishedOrder button{
+    border: none;
+}
+
+.checkout{
+    background-color: #BFD962;
+    color: white;
+    font-size: large;
+    font-style: bold;
+    border-radius: 20px;
+    border-width: 1px;
+    height: 8%;
+    width: 30%;
+    align-self: center;
+    margin-left: 35%;
+}
+.total{
+    border-top: solid 1px;
+    border-bottom: solid 1px;
+    height: 5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 95%;
+    align-self: center;
+    margin-left: 2.5%;
+    margin-bottom: 5%;
+}
+
+.total h3{
+    margin-left: 2%;
+    width: 20%;
+    margin-top: 1%;
+}
+
+.preorder img{
+    width: 35%;
+    height: 90%;
+    align-self: center;
+    margin-left: 2%;
+    border-radius: 10px;
+}
+
+/*emptycart*/
+.emptycart{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 60%;
+}
+.emptycart img{
+    height: 80%;
+}
+.emptycart button{
+    height: 10%;
+    width: 30%;
+    align-self: center;
+    border-radius: 20px;
+    background-color: #BFD962;
+    border-width: 1px;
+}
+
+/*current order*/
+.track{
+    height: 15%;
+    width: 100%;
+    
+}
+.track img{
+    height: 80%;
+    width: 95%;
+    margin-right: 5%;
+    border-bottom: solid 1px;
+}
+
+/*history order*/
+.historyorders{
+    height: 80%;
+}
+.historyorder{
+
+    height: 20%;
+    width: 100%;
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: solid 1px;
+}
+.historyorder img{
+    height: 90%;
+    width: 35%;
+    margin-left: 2%;
+}
+.history{
+    height: 100%;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.historyorder button{
+    height: 30%;
+    width: 20%;
+    margin-top: 10%;
+    margin-right: 2%;
+    background-color: #BFD962;
+    border-width: 1px;
+}
+.historyorder h3{
+
+    width: 50%;
+    height: 20%;
+}
+.historyorder h6{
+    width: 100%;
+    height: 20%;
+    margin-top: 50%;
+}
+.history button{
+    width: 80%;
+    height: 20%;
+    margin-bottom: 50%;
+    background-color: white;
+    border-color: white;
+    border-width: 0px;
+    color:green;
+}
+.overlay{
+    position: absolute;
+    margin-top: 20%;
+    width: 90%;
+    margin-left: 5%;
+    align-self: center;
+    z-index: 20;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: rgba(232, 243, 193, 0.8);
+    height: 10%;
+    border-radius: 20px;
+    display: none;
+}
+.overlay h4{
+    width: 25%;
+    margin-top: 10%;
+    margin-left: 5%;
+}
+.overlay-apear{
+    display: flex;
+}
+
+/*profile*/
+.profile{
+
+    height: 70%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-top: 5%;
+}
+.profile h2{
+   
+    height: 5%;
+    width: 50%;
+    margin-left: 15%;
+    align-self: center;
+}
+.profile div{
+   height: 15%;
+   width: 90%;
+   align-self: center;
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+
+   border: solid 1px;
+   border-radius: 20px;
+}
+.profile h3{
+    height: 10%;
+    width: 50%;
+    align-self: center;
+    margin-left: 15%;
+}
+.profile div h3{
+    height: 100%;
+    width: 50%;
+    margin-top: 18%;
+    margin-left: 5%;
+}
+.profile div h2{
+    height: 40%;
+    width: 10%;
+
+}
+.signout{
+    height: 7%;
+    width: 60%;
+    margin-left: 20%;
+    border-radius: 30px;
+    padding-left: 10%;
+    padding-bottom: 5%;
+}
+.signout h2{
+    height: 40%;
+}
+
+.red{
+    background-color: red;
+}

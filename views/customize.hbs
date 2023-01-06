@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/css/customer.css">
+</head>
+<body class="customize">
+    <div class="customizemenu">
+        <img src="/images/back.png" alt="back" onclick="window.location.href='/customer/bubbletea'" style="cursor: pointer;">
+        <img src="/images/bag.png" alt="Cart">
+    </div>
+    <div class="customizeitem">
+        <h1>{{name}}
+            From ${{prices}}
+        </h1>
+        <img src="{{pic_link}}" alt="Caramel">
+    </div>
+    <div class="customizedetails">
+
+        <h3>Edit</h3>
+        <form action="/customer/CustomizeResults" method="POST">
+            <input type = "hidden" name = "name" value = "{{name}}" />
+            <input type = "hidden" name = "prices" value = "{{prices}}" />
+             <input type = "hidden" name = "pic_link" value = "{{pic_link}}" />
+            <input type = "hidden" name = "amount" value = "1" />
+            <div>
+                <label for="Ice"><h2>Ice</h2></label>
+                <input type="text" list ="icelist"name="Ice" placeholder="0%" />
+                <datalist id="icelist">
+                    <option>0%</option>
+                    <option>30%</option>
+                    <option>50%</option>
+                    <option>70%</option>
+                    <option>100%</option>
+                </datalist>
+            </div>
+
+            <div>
+                <label for="Sugar"><h2>Sugar</h2></label>
+                <input type="text" list = "sugarlist" name="Sugar" placeholder="0%"/>
+                <datalist id = "sugarlist">
+                    <option>0%</option>
+                    <option>30%</option>
+                    <option>50%</option>
+                    <option>70%</option>
+                    <option>100%</option>
+                </datalist>
+            </div>
+            
+            <button><h1>Add</h1></button>
+        </form>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/itdemo/public/css/customer.css">
+</head>
+<body>
+    <div class="currentNhistory">
+        <h2 style="background-color:#BFD962;">Current order</h2>
+        <h2>History order</h2>
+    </div>
+    <form class="preorder" action="/customer/cart" method = "POST">
+        
+            <div class="orderdetails">
+                <img src="/itdemo/public/images/caramal.png" alt="Caramel">
+                <div>
+                    <h3>Caramel</h3>
+                    <h4>30% ice, 50% sugar</h4>
+                    <span>
+                        <input type="number" name="amount" id="" placeholder="1">
+                        <h3>$ 9</h3>
+                    </span>
+                </div>
+            </div>
+            <span class="total">
+                <h3>In total</h3>
+                <h3>$ 9</h3>
+            </span>
+        
+        
+        <button class="checkout">Checkout</button>
+        
+    </form>
+ 
+    
+    <div class = "nav">
+        <div class="floating">1</div>
+        <img src="/images/homebutton.png" alt="home" onclick="window.location.href='/customer/home'" style="cursor: pointer;">
+        <img src="/images/on order.png" alt="order" onclick="window.location.href='/customer/cart'" style="cursor: pointer;">
+        <img src="/images/profilebutton.png" alt="profile">
+    </div>
+</body>
+</html>

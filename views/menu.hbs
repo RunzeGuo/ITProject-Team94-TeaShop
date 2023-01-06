@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/css/customer.css">
+    <script src="https://kit.fontawesome.com/ca963f54bb.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="uppernav">
+        
+        <button onclick="window.location.href='/customer/bubbletea'" style="cursor: pointer;">
+            <i class="fa-solid fa-glass-water fa-2xl"></i>
+            <h3>Bubble Tea</h3>
+        </button>
+        <button>
+            <i class="fa-solid fa-martini-glass-citrus fa-2xl"></i>
+            <h3>Fruit Tea</h3>
+        </button>
+        <button>
+            <i class="fa-solid fa-lemon fa-2xl"></i>
+            <h3>Juice</h3>
+        </button>
+        <button>
+            <i class="fa-solid fa-cookie fa-2xl"></i>
+            <h3>Cake</h3>
+        </button>
+        <button>
+            <i class="fa-solid fa-ice-cream fa-2xl"></i>
+            <h3>Snacks</h3>
+        </button>
+    </div>
+    
+    
+    
+    <div class="customerMenuContent">
+        <div class="ads">
+        <img src="/images/ads.png" alt="snacks">
+        </div>
+        
+        <div class="allitems">
+            {{#each data}}
+            <form class="item" action="/customer/customize/{{this.name}}" method="post">
+                <img src="{{this.pic_link}}" alt="caramal">
+                <h3>{{this.name}}</h3>
+                <h3>$ {{this.prices}}</h3>
+                <button>
+                
+                    <h3>Select</h3>
+                </button>
+            </form>
+            {{/each}}
+        </div>
+    </div>
+    
+
+    <div class = "nav">
+        <div class="floating">{{amount}}</div>
+        <button onclick="window.location.href='/customer/home'" style="cursor: pointer;">
+            <i class="fa-solid fa-house fa-2xl"></i>
+            <h3>Home</h3>
+        </button>
+        <button onclick="window.location.href='/customer/cart'" style="cursor: pointer;">
+            <i class="fa-solid fa-bag-shopping fa-2xl"></i>
+            <h3>Order</h3>
+        </button>
+        <button onclick="window.location.href='/customer/profile'" style="cursor: pointer;">
+            <i class="fa-solid fa-user fa-2xl"></i>
+            <h3>Profile</h3>
+        </button>
+        
+    </div>
+</body>
+</html>

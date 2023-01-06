@@ -1,0 +1,47 @@
+<div class="w3-container" style="display:flex; flex-direction: row; height:100%; width:100%">
+{{#each new_order}}
+<div class="w3-card-4 w3-lime w3-padding-large" style="width: 500px;margin: 20px; height:fit-content">
+    <h2>Order details: </h2>
+    <div class="w3-padding-32 w3-bottombar w3-border-brown">
+        <button onclick="document.getElementById('{{this.id}}').style.display='block'" class="w3-btn w3-black">Check details to finish order</button>
+        <div id="{{this.id}}" class="w3-modal">
+            <div class="w3-modal-content w3-card-4">
+                <header class="w3-container w3-teal"> 
+                    <span onclick="document.getElementById('{{this.id}}').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+                    <h2>Order details</h2>
+                </header>
+                <div class="w3-left-align">
+                    {{#each items_and_number}}
+                    <h2>{{this.name}}</h2>
+                    <h2>{{this.Ice}} Ice</h2>
+                    <h2 class="w3-bottombar" style="margin-bottom:0">{{this.Sugar}} Sugar</h2>
+                    {{/each}}
+                </div>
+
+                <div class="w3-bar w3-bottombar w3-padding-large w3-khaki" style="display: flex; flex_direction: row">
+                    <div class="w3-container w3-padding-small">
+                        <form action="/restaurant/processing_order/finish/{{this.id}}" method="post">
+                            <button type="submit" class="w3-button w3-large w3-teal">Finish</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h3>Customer Information:</h3>
+    <h4>Customer Name: </h4>
+    <div class="w3-right-align">
+        <h4>{{this.customer_name}}</h4>
+    </div>
+    <h4>Customer Mobile: </h4>
+    <div class="w3-right-align">
+        <h4>{{this.customer_mobile}}</h4>
+    </div>
+    <h4>Customer Email: </h4>
+    <div class="w3-right-align">
+        <h4>{{this.customer_email}}</h4>
+    </div>
+    <dic class="w3-border-top"></dic>
+</div>
+{{/each}}
+</div>

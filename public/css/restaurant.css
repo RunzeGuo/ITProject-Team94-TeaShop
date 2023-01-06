@@ -1,0 +1,35 @@
+html,
+body {
+    font-family: Verdana, sans-serif;
+    box-sizing: border-box;
+}
+
+.sidebar {
+    height: 100%;
+    width: 200px;
+    background-color: #fff;
+    position: fixed !important;
+    z-index: 1;
+    overflow: auto
+}
+
+.right_direct_box {
+    display: flex;
+    flex-direction: row;
+}
+
+.sidebar-item {
+    padding: 8px 16px;
+    float: left;
+    width: auto;
+    border: none;
+    display: block;
+    outline: 0;
+    width: 100%;
+    display: block;
+    padding: 8px 16px;
+    border: none;
+    white-space: normal;
+    float: none;
+    text-align: center
+}

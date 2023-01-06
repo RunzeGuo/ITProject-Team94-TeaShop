@@ -1,0 +1,40 @@
+
+        .accountDetails{
+            display: flex;
+            height: 80vh;
+            flex-direction: column;
+            justify-content: start;
+        }
+
+        form{
+            margin-top: 5%;
+            height: 30%;
+            text-align: center;
+        }
+
+
+        form input{
+            height: 30%;
+            width: 80%;
+            border-radius: 14px;
+            text-align: center;
+           
+        }
+
+        button{
+            width: 50%;
+            height: 25%;
+            font-size: large;
+            font-weight: bold;
+            border-radius: 14px;
+            background-color: #BFD962;
+            margin-top: 10%;
+            
+        }
+
+        div{
+            display: flex;
+            flex-direction: column;
+            height: 10%;
+            text-align: center;
+        }
